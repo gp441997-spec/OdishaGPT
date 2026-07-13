@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="or">
 <head>
-  <title>OdishaGPT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OdishaGPT</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+padding:20px;
+}
+.container{
+max-width:700px;
+margin:auto;
+}
+h1{
+text-align:center;
+}
+#chat{
+height:400px;
+overflow-y:auto;
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+input{
+width:75%;
+padding:12px;
+border:none;
+border-radius:8px;
+}
+button{
+padding:12px 20px;
+background:#22c55e;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+.msg{
+margin:10px 0;
+}
+.user{
+color:#38bdf8;
+}
+.ai{
+color:#22c55e;
+}
+</style>
 </head>
-<body style="font-family:Arial;text-align:center;background:#f4f4f4;padding:50px;">
-  <h1>🤖 Welcome to OdishaGPT</h1>
-  <p>Free AI Assistant for Everyone</p>
-  <button>Start Chat</button>
-</body>
-</html>
+<body>
+
+<div class="container">
+<h1>🤖 OdishaGPT</h1>
+
+<div id="chat">
+<div class="msg ai">
+ନମସ୍କାର! ମୁଁ OdishaGPT। ଆପଣଙ୍କୁ କିପରି ସହାଯ୍ୟ କରିପାରିବି?
+</div>
+</div>
+
+<input id="question" placeholder="କିଛି ଲେଖନ୍ତୁ...">
+<button onclick="reply()">Send</button>
+
+</div>
+
+<script>
+function reply(){
+let q=document.getElementById("question").value;
+if(q=="") return;
+
+document.getElementById("chat").innerHTML+=
+"<div class='msg user'><b>ଆପଣ:</b> "+q+"</div>";
+
+document.getElementById("chat
